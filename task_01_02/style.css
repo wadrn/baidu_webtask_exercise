@@ -1,0 +1,156 @@
+*{
+  margin:0;
+  padding:0;
+}
+body{
+  background-color:rgb(222,222,222);
+}
+header{
+  position:relative;
+  background-color:rgb(51,51,51);
+  height:50px;
+  width:100%;
+}
+header h1{
+  float:left;
+    margin-left: 10px;
+}
+header ul{
+  height:50px;
+  color:white;
+  font-size:12px;
+  float:right;
+}
+header li{
+    float: left;
+    margin-right: 10px;
+  height:50px;
+  line-height:50px;
+}
+header li:hover{
+    border-bottom: 1px solid red;
+    background: #474747;
+    border-radius: 3px;
+}
+header a{
+  cursor:pointer;
+}
+header a:hover{
+  color:green;
+  font-weight:bold;
+}
+article ,aside{
+    display: block;
+    margin: 20px;
+    padding: 20px;
+      background-color:rgb(255,255,255);
+     box-shadow: 1px 1px 2px 1px #848484;
+}
+article h2{
+  color:#333;
+  padding: 5px 0;
+}
+article h3{
+  color:#808080;
+    padding :10px 0;
+    font-size: 16px;
+}
+.author,.time{
+    line-height:30px;
+    color: #808080;
+    font-size: 12px;
+}
+p{
+  margin-top:10px;
+    text-indent: 2em;
+}
+ul{
+  list-style-type:none;
+}
+.clear{
+  clear:both;
+}
+
+img#Hulk{
+  float:left;
+}
+.Image{
+  border:1px solid gray;
+  width:120px;
+  height:150px;
+  bacground:white;
+  padding:10px;
+  text-align:center;
+  margin-bottom:10px;
+}
+.Image label{
+  font-size:16px;
+}
+.Image img{
+  width:100%;
+  margin 10px auto;
+}
+ol{
+   padding: 10px 5px;
+    margin-left: 20px;
+}
+ol li{
+    margin-bottom: 5px;
+}
+table{
+  width:100%;
+    border-collapse: collapse;
+}
+th{
+  width:40%;
+  background-color:black;
+  color:white;
+}
+td{
+  text-align:center;
+    border: 1px solid #ccc;
+}
+table a{
+    color: blue;
+}
+table a:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+aside h4{
+    height: 40px;
+    line-height: 40px;
+    padding-left: 10px;
+    border-left: 3px solid #ccc;
+    
+}
+aside form div{
+    margin-bottom: 15px;
+}
+aside form div .tips{
+    float: left;
+    text-align: right;
+    width: 35%;
+    padding-right: 15px;
+}
+aside p{
+    margin-left: 35%;
+    font-size: 12px;
+    color: #aaa;
+}
+aside textarea{
+    width: 50%;
+    height: 100px;
+}
+aside .submit{
+    width: 100%;
+    height: 35px;
+    border-radius: 10px;
+    background-color: green;
+    color: white;
+    font-size: 18px;
+    border: none;
+}
+aside .submit:hover{
+    background-color:darkgreen;
+}
