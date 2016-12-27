@@ -10,9 +10,20 @@ list-style-type: none;
     margin: 20px;
     background-color: #eee;
     border: 1px solid #999;
-    overflow: auto;
+    /*清除浮动方法一*/
+/*    overflow: auto; */
+    
 /*    min-height: 700px;*/
 }
+/*清除浮动的方法二*/
+.content:before,.content:after{
+    display: table;
+    content: "";
+}
+.content:after{
+    clear: both;
+}
+
 .left{
 /*
     position: absolute;
@@ -70,6 +81,7 @@ list-style-type: none;
     padding: 5px;
 }
 .main h2{
+    color: #aaa;
     margin:10px 5px;
     padding: 5px;
 }
