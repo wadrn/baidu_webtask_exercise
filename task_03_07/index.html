@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>排序表格</title>
+        <style media="screen">
+            #table,th,td{
+                border-collapse:collapse;
+                border: 1px solid gray;
+                text-align: left;
+                padding: 0 10px;
+            }
+            td,th{
+                width: 100px;
+                height: 50px;
+            }
+            #table th{
+                font-size: 20px;
+                overflow: hidden;
+                background: darkgray;
+            }
+            .up{
+                position: absolute;
+                top: 25px;
+                margin-left: 70px;
+                width: 0;
+                height: 0;
+                border-left: 5px solid transparent;
+                border-right: 5px solid transparent;
+                border-bottom: 8px solid white;
+            }
+            .down{
+                position: absolute;
+                top: 37px;
+                margin-left: 70px;
+                width: 0;
+                height: 0;
+                border-top: 8px solid white;
+                border-left: 5px solid transparent;
+                border-right: 5px solid transparent;
+            }
+        </style>
+    </head>
+    <body>
+        <table id="table">
+            <tbody>
+                <tr>
+                    <th>姓名<div class="up"></div><div class="down"></div></th>
+                    <th>语文<div class="up"></div><div class="down"></div></th>
+                    <th>数学<div class="up"></div><div class="down"></div></th>
+                    <th>英语<div class="up"></div><div class="down"></div></th>
+                    <th>总分<div class="up"></div><div class="down"></div></th>
+                </tr>
+                <tr class="student">
+                    <td>小明</td>
+                    <td>60</td>
+                    <td>90</td>
+                    <td>90</td>
+                    <td>240</td>
+                </tr>
+                <tr class="student">
+                    <td>小红</td>
+                    <td>80</td>
+                    <td>90</td>
+                    <td>80</td>
+                    <td>250</td>
+                </tr>
+                <tr class="student">
+                    <td>小亮</td>
+                    <td>100</td>
+                    <td>70</td>
+                    <td>90</td>
+                    <td>260</td>
+                </tr>
+            </tbody>
+        </table>
+        <script type="text/javascript">
+        var table = document.getElementById('table');
+            var upBtn =document.getElementsByClassName('up');
+            var downBtn = document.getElementsByClassName("down");
+            var tr =document.getElementsByClassName('student');
+            tr = Array.prototype.slice.call(tr);
+            function descend(index){
+                tr.sort(function(a,b){
+                    var grade1 = Number(a.getElementsByTagName('td')[index].textContent);
+                    var grade2 = Number(b.getElementsByTagName('td')[index].textContent);
+                    return grade1-grade2;
+                });
+
+                for(var i=0;i<tr.length;i++){
+                    table.appendChild(tr[i]);
+                }
+            }
+            function ascend(index){
+                tr.sort(function(a,b){
+                    var grade1 = Number(a.getElementsByTagName('td')[index].textContent);
+                    var grade2 = Number(b.getElementsByTagName('td')[index].textContent);
+                    return grade2-grade1;
+                });
+                for(var i=0;i<tr.length;i++){
+                    table.appendChild(tr[i]);
+                }
+            }
+            upBtn = Array.prototype.slice.call(upBtn);
+            upBtn.forEach(function(item,index){
+                item.onclick = function(){
+                    ascend(index);
+                }
+            });
+            downBtn = Array.prototype.slice.call(downBtn);
+            downBtn.forEach(function(item,index){
+                item.onclick = function(){
+                    descend(index);
+                }
+            });
+        </script>
+    </body>
+</html>

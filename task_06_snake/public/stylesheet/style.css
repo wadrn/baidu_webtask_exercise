@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#map{
+    margin: 50px auto;
+    border: 2px solid black;
+    background: blue;
+    border-collapse: collapse;
+}
+tr,td{
+    width: 19px;
+    height: 19px;
+    border: 1px solid gray;
+}
+.snakebody{
+    background: green;
+}
+.food{
+    background: black;
+}
+.control{
+    width: 200px;
+    margin: 0 auto;
+}
+button{
+    display: inline-block;
+    width: 80px;
+    height: 25px;
+    background: pink;
+}
+#lose{
+    display: none;
+    text-align: center;
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: black;
+    opacity: 0.8;
+    color: white;
+    font-weight: bold;
+    font-size: 26px;
+    z-index: 999;
+    top: 150px;
+    left: 470px;
+}
+#lose h2{
+    margin-top: 70px;
+    margin-bottom: 30px;
+}

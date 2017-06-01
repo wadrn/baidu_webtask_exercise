@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    width: 800px;
+    margin: 100px auto;
+}
+.item{
+    margin-top: 30px;
+    width: 600px;
+    margin: 50px auto;
+    font-size: 24px;
+}
+label{
+    display: inline-block;
+    width: 150px;
+}
+input{
+    display: inline-block;
+    width: 300px;
+    font-size: 30px;
+    border-radius: 5px;
+    box-shadow:none;
+}
+button{
+    display: inline-block;
+    width: 100px;
+    background: rgb(46,121,187);
+    font-size: 24px;
+    color: white;
+    padding:10px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: none;
+}
+.tip{
+    font-size: 16px;
+    margin-left: 150px;
+    display: none;
+}

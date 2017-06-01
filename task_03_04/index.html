@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title> small block</title>
+        <style media="screen">
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            .container{
+                overflow: hidden;
+                text-align: center;
+                padding: 20px;
+            }
+            .control{
+                margin-left: 150px;
+            }
+            .row .column{
+                width: 40px;
+                height: 40px;
+                border-right: 1px solid black;
+                border-bottom: 1px solid black;
+                line-height: 40px;
+                text-align: center;
+                box-sizing: border-box;
+                overflow: hidden;
+            }
+            .row{
+                float: left;
+            }
+
+            .row .column:first-child{
+                border-bottom: none;
+                border-right: none;
+            }
+            .row:first-child .column{
+                border-bottom: none;
+                border-right: none;
+                border-right: none
+            }
+            .row .column:nth-child(2){
+                border-top: 3px solid black;
+            }
+            .row:nth-child(2) .column{
+                border-left: 3px solid black;
+            }
+            .row .column:nth-child(11){
+                border-bottom: 3px solid black;
+            }
+            .row:nth-child(11) .column{
+                border-right: 3px solid black;
+            }
+            .row:first-child .column:nth-child(2){
+                border-top: none;
+            }
+            .row:nth-child(2) .column:first-child{
+                border-left: none;
+            }
+            .row:first-child .column:nth-child(11){
+                border-bottom: none;
+            }
+            .row:nth-child(11) .column:first-child{
+                border-right: none;
+            }
+            .select{
+                background: red;
+                border-right: 10px solid blue;
+            }
+            .left{
+                margin-left: 0;
+                width: 10px;
+                height: 39px;
+            }
+            .right{
+                margin-left: 29px;
+                width: 10px;
+                height: 39px;
+            }
+            .top{
+                margin-top: 0;
+                width: 39px;
+                height: 10px;
+            }
+            .bottom{
+                margin-top: 29px;
+                width: 39px;
+                height: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="column"></div>
+                <div class="column number">1</div>
+                <div class="column number">2</div>
+                <div class="column number">3</div>
+                <div class="column number">4</div>
+                <div class="column number">5</div>
+                <div class="column number">6</div>
+                <div class="column number">7</div>
+                <div class="column number">8</div>
+                <div class="column number">9</div>
+                <div class="column number">10</div>
+            </div>
+            <div class="row">
+                <div class="column number">1</div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column last"></div>
+            </div>
+            <div class="row">
+                <div class="column number">2</div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column last"></div>
+            </div>
+            <div class="row">
+                <div class="column number">3</div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column last"></div>
+            </div>
+            <div class="row">
+                <div class="column number">4</div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column select"></div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column last"></div>
+            </div>
+            <div class="row">
+                <div class="column number">5</div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column last"></div>
+            </div>
+            <div class="row">
+                <div class="column number">6</div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column last"></div>
+            </div>
+            <div class="row">
+                <div class="column number">7</div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column last"></div>
+            </div>
+            <div class="row">
+                <div class="column number">8</div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column last"></div>
+            </div>
+            <div class="row">
+                <div class="column number">9</div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column last"></div>
+            </div>
+            <div class="row">
+                <div class="column number">10</div>
+                <div class="column last"></div>
+                <div class="column last"></div>
+                <div class="column last"></div>
+                <div class="column last"></div>
+                <div class="column last"></div>
+                <div class="column last"></div>
+                <div class="column last"></div>
+                <div class="column last"></div>
+                <div class="column last"></div>
+                <div class="column last"></div>
+            </div>
+        </div>
+        <div class="control">
+            <input type="text" name="" value="" id="order">
+            <button type="button" name="button" id="go">执行</button>
+        </div>
+    </body>
+    <script type="text/javascript">
+    function hasClass(cls,ele){
+        if(ele.className.length ===0){
+            return false;
+        };
+        var className = ele.getAttribute('class');
+        var arr = className.trim().split(' ');
+        if(arr.indexOf(cls)!==-1){
+            return true;
+        }
+        return false;
+    }
+    function addClass(cls,ele){
+        if(!hasClass(cls,ele)){
+            var className =ele.getAttribute('class');
+            className = className + ' '+ cls;
+            ele.setAttribute('class',className);
+        }
+    }
+    function removeClass(cls,ele){
+        if(hasClass(cls,ele)){
+            var reg =new RegExp('(\\s|^)'+cls+'(\\s|$)');
+            ele.className = ele.className.replace(reg,' ');
+        }
+    }
+    function getNodeIndex(node){
+        var nth =0;
+        while(node = node.previousElementSibling){
+            nth++;
+        }
+        return nth;
+    }
+    function initial(){
+        var rows = document.getElementsByClassName('row');
+        for(var i=1;i<rows.length;i++){
+            var columns = rows[i].getElementsByClassName('column');
+            for(var j=1;j<columns.length;j++){
+                if(hasClass('select',columns[j])){
+                    var direction = document.createElement('div');
+                    addClass('dir',direction);
+                    addClass('left',direction);
+                    direction.style.backgroundColor ='blue';
+                    columns[j].appendChild(direction);
+                }
+            }
+        }
+    }
+    function exec(){
+        var order = document.getElementById('order').value;
+        var selected =document.getElementsByClassName('select')[0];
+        var dir = selected.getElementsByClassName('dir')[0];
+        switch(order){
+            case 'TUN LEF':
+              if(hasClass('left',dir)){
+                  removeClass('left',dir);
+                  addClass('bottom',dir);
+              }else if(hasClass('bottom',dir)){
+                  removeClass('bottom',dir);
+                  addClass('right',dir);
+              }else if(hasClass('right',dir)){
+                  removeClass('right',dir);
+                  addClass('top',dir);
+              }else if(hasClass('top',dir)){
+                  removeClass('top',dir);
+                  addClass('left',dir);
+              }
+              break;
+            case 'TUN RIG':
+            if(hasClass('left',dir)){
+                removeClass('left',dir);
+                addClass('top',dir);
+            }else if(hasClass('bottom',dir)){
+                removeClass('bottom',dir);
+                addClass('left',dir);
+            }else if(hasClass('right',dir)){
+                removeClass('right',dir);
+                addClass('bottom',dir);
+            }else if(hasClass('top',dir)){
+                removeClass('top',dir);
+                addClass('right',dir);
+            }
+                break;
+            case 'TUN BAC':
+            if(hasClass('left',dir)){
+                removeClass('left',dir);
+                addClass('right',dir);
+            }else if(hasClass('bottom',dir)){
+                removeClass('bottom',dir);
+                addClass('top',dir);
+            }else if(hasClass('right',dir)){
+                removeClass('right',dir);
+                addClass('left',dir);
+            }else if(hasClass('top',dir)){
+                removeClass('top',dir);
+                addClass('bottom',dir);
+            }
+                break;
+            case 'GO':
+            if(hasClass('top',dir)){
+                if(hasClass('number',selected.previousElementSibling)){
+                    alert('已经到达最上方！');
+                    return;
+                }
+                selected.removeChild(dir);
+                removeClass('select',selected);
+                addClass('select',selected.previousElementSibling);
+                selected.previousElementSibling.appendChild(dir);
+            }else if(hasClass('bottom',dir)){
+                if(hasClass('last',selected)){
+                    alert('已经到达最下方！');
+                    return;
+                }
+                selected.removeChild(dir);
+                removeClass('select',selected);
+                addClass('select',selected.nextElementSibling);
+                selected.nextElementSibling.appendChild(dir);
+            }else if(hasClass('left',dir)){
+                var index = getNodeIndex(selected);
+                var parentRow = selected.parentNode;
+                var childrenCo = parentRow.previousElementSibling.children;
+                for(var i=0;i<childrenCo.length;i++){
+                    if(i === index){
+                        if(hasClass('number',childrenCo[i])){
+                            alert('已经到达最左！');
+                            return;
+                        }else{
+                            selected.removeChild(dir);
+                            removeClass('select',selected);
+                            addClass('select',childrenCo[i]);
+                            childrenCo[i].appendChild(dir);
+                        }
+                    }
+                }
+            }else if(hasClass('right',dir)){
+                index = getNodeIndex(selected);
+                parentRow = selected.parentNode;
+                if(!parentRow.nextElementSibling){
+                    alert('已经到达最右！');
+                    return;
+                }
+                childrenCo = parentRow.nextElementSibling.children;
+                for(i=0;i<childrenCo.length;i++){
+                    if(i === index){
+                        selected.removeChild(dir);
+                        removeClass('select',selected);
+                        addClass('select',childrenCo[i]);
+                        childrenCo[i].appendChild(dir);
+                    }
+                }
+            }
+                break;
+        }
+    }
+    window.onload =function(){
+        initial();
+        var button = document.getElementById('go');
+        button.addEventListener('click',exec);
+    }
+    </script>
+</html>

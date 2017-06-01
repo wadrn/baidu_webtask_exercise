@@ -1,0 +1,46 @@
+body{
+    margin:0;
+    padding: 0;
+}
+#one{
+    height: 120px;
+    border: 1px solid red;
+}
+#two{
+    height: 100px;
+    border: 1px solid red;
+}
+#three{
+    height: 40px;
+    border: 1px solid red;
+}
+#four{
+    height: 200px;
+    border: 1px solid blue;
+}
+.parent{
+    padding:0 20px;
+    display: flex;
+    margin-top: 10px;
+}
+.child{
+    width: 150px;
+    margin: auto;
+}
+@media(min-width:640px){
+    .parent{
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+@media(max-width:640px){
+    .parent{
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+    .child:nth-child(4){
+        order: -1;
+    }
+}

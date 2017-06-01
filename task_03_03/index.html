@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>ife表单联动</title>
+        <style media="screen">
+        #in{
+            display: none;
+        }
+        #out{
+            display: none;
+        }
+        #shanghai{
+            display: none;
+        }
+        #jilin{
+            display: none;
+        }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div id="selectbox">
+                <input type="radio" name="student" value="1" onchange="change()">在校生
+                <input type="radio" name="student" value="2"  onchange="change()">非在校生
+            </div>
+            <div id="in">
+                <label for="">学校</label>
+                <select class="city" name="city" id="city" onchange="changeList()">
+                    <option value="1">beijing</option>
+                    <option value="2">shanghai</option>
+                    <option value="3">jilin</option>
+                </select>
+                <select class="university" name="university" id="beijing">
+                    <option value="">bupt</option>
+                    <option value="">bjdx</option>
+                    <option value="">bbs</option>
+                </select>
+                <select class="university" name="university" id="shanghai">
+                    <option value="">sadas</option>
+                    <option value="">dasd</option>
+                    <option value="">dsad</option>
+                </select>
+                <select class="university" name="university" id="jilin">
+                    <option value="">aaaaa</option>
+                    <option value="">dsd</option>
+                    <option value="">dsds</option>
+                </select>
+            </div>
+            <div id="out">
+                <label for="">就业单位</label>
+                <input type="text" name="" value="">
+            </div>
+        </div>
+        <script type="text/javascript">
+        function change(){
+            var inputs =document.getElementsByName('student');
+            inputs = Array.prototype.slice.call(inputs);
+            inputs.forEach(function(input,index){
+                if(input.checked ===true){
+                    if(input.value ==='1'){
+                        document.getElementById('out').style.display ='none';
+                        document.getElementById('in').style.display ='block';
+                    }else if(input.value ==='2'){
+                        document.getElementById('in').style.display ='none';
+                        document.getElementById('out').style.display ='block';
+                    }
+                }
+            });
+        }
+        function changeList(){
+            var select = document.getElementById('city');
+            var city = select.options[select.selectedIndex].getAttribute('value');
+            if(city === '1'){
+                document.getElementById('beijing').style.display ="inline-block";
+                document.getElementById('shanghai').style.display= 'none';
+                document.getElementById('jilin').style.display ='none';
+            }else if(city === '2'){
+                document.getElementById('beijing').style.display ="none";
+                document.getElementById('shanghai').style.display= 'inline-block';
+                document.getElementById('jilin').style.display ='none';
+            }else if(city === '3'){
+                document.getElementById('beijing').style.display ="none";
+                document.getElementById('shanghai').style.display= 'none';
+                document.getElementById('jilin').style.display ='inline-block';
+            }
+        }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <style media="screen">
+        *{
+            margin:0;
+            padding: 0;
+        }
+        a{
+            text-decoration: none;
+            color:
+        }
+        body{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .wrap{
+            position: relative;
+            max-width: 600px;
+            display: flex;
+            /*width: 50%;*/
+        }
+        .wrap img{
+            width: 100%;
+            height: 100%;
+        }
+        .wrap .caption{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            padding:30px;
+            box-sizing: border-box;
+        }
+        .wrap .caption .container{
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            color: floralwhite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-shadow: 1px 1px 2px rgba(0,0,0, .26);
+            box-shadow: 0 0 30px 30px rgba(0, 0, 0, .46);
+            transition: opacity .8s;
+            opacity: 0
+        }
+        .wrap .caption .container h1{
+            margin-bottom: 20px;
+        }
+        .wrap .caption .container a{
+            position: relative;
+            color: deepskyblue;
+            z-index: 1;
+        }
+        .wrap .caption .container::before {
+content: '';
+position: absolute;
+left: 0;
+top: 50%;
+width: 100%;
+height: 0;
+border: 3px solid ghostwhite;
+border-width: 0 3px;
+overflow: hidden;
+visibility: hidden;
+transition: all .8s;
+box-sizing: border-box;
+}
+
+.wrap .caption .container::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 0;
+  height: 100%;
+  border: 3px solid ghostwhite;
+  border-width: 3px 0;
+  overflow: hidden;
+  visibility: hidden;
+  transition: all .8s;
+  box-sizing: border-box;
+}
+
+.wrap:hover .container {
+  opacity: 1
+}
+
+.wrap:hover .container::before {
+  height: 100%;
+  visibility: visible;
+  top: 0;
+}
+
+.wrap:hover .container::after {
+  width: 100%;
+  visibility: visible;
+  left: 0;
+}
+.wrap .caption .container .ribbon{
+/*渐变背景，此处为能无缝拼接的渐变 即0~100%*/
+background-image: -webkit-linear-gradient(left, #3498db, #f47920 10%, #d71345 20%, #f7acbc 30%, #ffd400 40%, #3498db 50%, #f47920 60%, #d71345 70%, #f7acbc 80%, #ffd400 90%, #3498db);
+-webkit-text-fill-color: transparent;
+/*背景剪裁为文字，相当于用背景填充文字 CSS3新属性*/
+-webkit-background-clip: text;
+/*背景图片向水平方向扩大一倍，这样background-position才有移动与变化的空间*/
+-webkit-background-size: 200% 100%;
+background-size: 200% 100%;
+/* 动画 */
+-webkit-animation: masked-animation 4s infinite linear;
+}
+.wrap .caption .container .a-ribbon{
+    opacity: 0;
+    transform: translate(0,20px);
+    transition: opacity .5s transform .5s;
+    animation: ribbon-animation 5s infinite linear;
+}
+.wrap:hover .caption .container .a-ribbon{
+    opacity: 1;
+    transform: translate(0);
+}
+.wrap:hover img{
+    filter: blur(3px);
+}
+@keyframes masked-animation {
+0% {
+background-position: 0 0;
+}
+100% {
+background-position: -100% 0;
+}
+}
+@keyframes ribbon-animation {
+    0%{
+        color: cornflowerblue;
+    }
+    25%{
+        color: orangered;
+    }
+    50%{
+        color: pink;
+    }
+    75%{
+        color: palevioletred;
+    }
+    100%{
+        color: dodgerblue;
+    }
+}
+
+        </style>
+    </head>
+    <body>
+        <figure class="wrap">
+    <figcaption class="caption">
+      <div class="container">
+        <h1 class="ribbon">霍建华-百度贴吧</h1>
+        <a href="http://tieba.baidu.com/f?kw=%BB%F4%BD%A8%BB%AA&fr=ala0&loc=rec" target="_blank" class="a-ribbon">点击进入</a>
+      </div>
+    </figcaption>
+    <img src="huo.jpg" alt="huo">
+  </figure>
+    </body>
+</html>

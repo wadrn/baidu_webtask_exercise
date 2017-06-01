@@ -1,0 +1,43 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: white;
+}
+div{
+    border: 1px solid black;
+}
+#root{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 800px;
+    height: 200px;
+    margin: 10px auto;
+    background: white;
+}
+.first{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 390px;
+    height: 160px;
+    background: white;
+}
+.second{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 185px;
+    height: 120px;
+    background: white;
+}
+.three{
+    width: 82px;
+    height: 80px;
+    background: white;
+}
+.button{
+    text-align: center;
+    margin-top: 20px;
+    border: none;
+}

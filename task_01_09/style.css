@@ -1,0 +1,108 @@
+body,header,div,a,input ul li{
+    margin:0;
+    padding:0;
+}
+a{
+    text-decoration: none;
+}
+header{
+    height: 60px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background-color: rgb(42,138,188);
+}
+.left{
+    float: left;
+}
+.right{
+    float: right;
+}
+#logo{
+    height: 40px;
+    width: 40px;
+    margin-left: 10px;
+    margin-top: 10px;
+    background-color: white;
+}
+.search{
+    border-radius: 10px;
+    display: inline-block;
+    width: 300px;
+    height:20px;
+    margin-top: 18px;
+    box-shadow: none;
+}
+.login{
+        color: white;
+       font-size: 16px;
+       margin-left: 20px;
+       margin-right: 50px;
+}
+main{
+    margin-top: 60px;
+    min-height: 660px;
+    overflow: hidden;
+}
+.sidebar{
+    background-color: rgb(43,46,60);
+    width: 230px;
+    min-height: 660px;
+}
+.content{
+    margin-left: 230px;
+    min-height: 660px;
+}
+#nav{
+    height: 30px;
+    overflow: hidden;
+}
+#nav ul{
+    list-style: none;
+}
+#nav ul li{
+    float: left;
+    font-size: 12px;
+    color: white;
+    margin-left: 10px;
+    margin-top: -10px;
+}
+#nac ul li:last-child a{
+    color: rgb(42,138,188);
+}
+#article{
+    min-height: 630px;
+    background-color: rgb(238,238,238);
+}
+.container{
+    height: 100%;
+    width: 900px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.one{
+    height: 100px;
+    background: gray;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.two{
+    height: 60px;
+    background: green;
+    margin-bottom: 20px;
+}
+.three{
+    height: 80px;
+    background: pink;
+    margin-bottom: 15px;
+}
+.four{
+    height: 350px;
+    background: yellow;
+    margin-bottom: 10px;
+}
+.five{
+    height: 400px;
+    background: orange;
+    margin-bottom: 10px;
+}

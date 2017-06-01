@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <style media="screen">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        table{
+            border-collapse: collapse;
+            text-align: center;
+        }
+        #row{
+            margin-left: 50px;
+        }
+        #row tr td{
+            width: 40px;
+        }
+        #column tr td{
+            height: 40px;
+        }
+        #column{
+            margin-left: 10px;
+            float: left;
+        }
+        #content{
+            margin-left: 45px;
+            border: solid 1px black;
+        }
+        #content td{
+            border: solid 1px black;
+            width: 40px;
+            height: 40px;
+        }
+        #dir{
+            background: blue;
+            width: 40px;
+            height: 10px;
+        }
+        .control{
+            width: 200px;
+            margin: 20px auto;
+        }
+        </style>
+    </head>
+    <body>
+        <table id="row">
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>7</td>
+                    <td>8</td>
+                    <td>9</td>
+                    <td>10</td>
+                </tr>
+            </tbody>
+        </table>
+        <table id="column">
+            <tbody>
+                <tr>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                </tr>
+            </tbody>
+        </table>
+        <table id="content">
+            <tbody id="tbody">
+            </tbody>
+        </table>
+        <div class="control">
+            <button type="button" name="button" id="left">turnleft</button>
+            <button type="tr" name="button" id="right">turnright</button>
+            <button type="button" name="button" id="back">turnback</button>
+            <button type="button" name="button" id="traleft">traleft</button>
+            <button type="button" name="button" id="traright">traright</button>
+            <button type="button" name="button" id="tratop">tratop</button>
+            <button type="button" name="button" id="trabottom">trabottom</button>
+            <button type="button" name="button" id="movleft">movleft</button>
+            <button type="button" name="button" id="movright">movright</button>
+            <button type="button" name="button" id="movtop">movtop</button>
+            <button type="button" name="button" id="movbottom">movbottom</button>
+        </div>
+    </body>
+    <script type="text/javascript">
+       var cur = 0;
+        function initial(){
+            var tbody = document.getElementById('tbody');
+            tbody.innerHTML ="";
+            for(var i=1;i<=10;i++){
+                var tr = document.createElement('tr');
+                for(var j=1;j<=10;j++){
+                    var td = document.createElement('td');
+                    td.id = "td"+i+j;
+                    td.innerHTML="";
+                    tr.appendChild(td);
+                }
+                tbody.appendChild(tr);
+            }
+            var box =document.getElementById('td55');
+            var div =document.createElement('div');
+            div.setAttribute('class','box');
+            div.style.backgroundColor ='red';
+            div.style.position ="absolute";
+            div.style.width ="40px";
+            div.style.height="40px";
+            div.style.border="none";
+            div.style.left ="210px";
+            div.style.top ="183px";
+            var dir = document.createElement('div');
+            dir.setAttribute('id','dir');
+            div.appendChild(dir);
+            box.appendChild(div);
+        }
+        function turnLeft(){
+            cur=cur-90;
+            var box = document.getElementsByClassName('box')[0];
+            box.style.transition ="all 2s";
+            box.style.transform ="rotate(" + cur+"deg)";
+        }
+        function turnRight(){
+            cur =cur+90;
+            var box = document.getElementsByClassName('box')[0];
+            box.style.transition ="all 2s";
+            box.style.transform ="rotate(" + cur+"deg)";
+        }
+        function turnBack(){
+            cur =cur+180;
+            var box = document.getElementsByClassName('box')[0];
+            box.style.transition ="all 2s";
+            box.style.transform ="rotate(" + cur+"deg)";
+        }
+        function traLeft() {
+            var box = document.getElementsByClassName('box')[0];
+            box.style.transition ="all 2s";
+            if(box.style.left!== '46px'){
+                box.style.left = (parseInt(box.style.left.replace('px',""))-41)+"px";
+            }
+        }
+        function traRight(){
+            var box = document.getElementsByClassName('box')[0];
+            box.style.transition ="all 2s";
+            if(box.style.left!== '415px'){
+                box.style.left = (parseInt(box.style.left.replace('px',""))+41)+"px";
+            }
+        }
+        function traTop(){
+            var box = document.getElementsByClassName('box')[0];
+            box.style.transition ="all 2s";
+            if(box.style.top!== '19px'){
+                box.style.top = (parseInt(box.style.top.replace('px',""))-41)+"px";
+            }
+        }
+        function traBottom(){
+            var box = document.getElementsByClassName('box')[0];
+            box.style.transition ="all 2s";
+            if(box.style.top!== '378px'){
+                box.style.top = (parseInt(box.style.top.replace('px',""))+41)+"px";
+            }
+        }
+        function movLeft(){
+            var deg = cur%360;
+            if(deg ==0 || deg ==180 || deg==-180){
+                if(deg ==0){
+                    turnLeft();
+                }else{
+                    turnRight();
+                }
+            }else if(deg == 90 || deg == -270){
+                turnLeft();
+                turnLeft();
+            }
+            var box = document.getElementsByClassName('box')[0];
+            if(box.style.left!== '46px'){
+                box.style.left = (parseInt(box.style.left.replace('px',""))-41)+"px";
+            }
+        }
+        window.onload = function(){
+            initial();
+            var tlBtn = document.getElementById('left');
+            var trBtn = document.getElementById('right');
+            var tbBtn =document.getElementById('back');
+
+            var traleft =document.getElementById('traleft');
+            var traright = document.getElementById('traright');
+            var tratop =document.getElementById('tratop');
+            var trabottom = document.getElementById('trabottom');
+
+            var movleft = document.getElementById('movleft');
+            tlBtn.addEventListener('click',turnLeft);
+            trBtn.addEventListener('click',turnRight);
+            tbBtn.addEventListener('click',turnBack);
+            movleft.addEventListener('click',movLeft);
+            traleft.addEventListener('click',traLeft);
+            traright.addEventListener('click',traRight);
+            tratop.addEventListener('click',traTop);
+            trabottom.addEventListener('click',traBottom);
+        }
+    </script>
+</html>

@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+div{
+    background: white;
+    color: black;
+    font-size: 10px;
+    border: 1px solid black;
+    margin:10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#container{
+    border: none;
+}
+#control{
+    margin: 20px auto;
+    width: 600px;
+    border: none;
+    display: flex;
+    align-items: center;
+}
+#iterator{
+    margin-right: 50px;
+}
+#search{
+    margin-right: 50px;
+}
+.select{
+    background-color: pink;
+}
